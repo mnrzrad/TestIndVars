@@ -10,33 +10,33 @@
 #' Marques, F. J., Diogo, J., Norouzirad, M., & Bispo, R. (2023). Testing the independence of variables for specific covariance structures: A simulation study. Mathematical Methods in the Applied Sciences, 46(9), 10421–10434. DOI: 10.1002/mma.9130
 #' @examples
 #' # Example usage:
-#' \dontrun{
-#' library(MASS)
+#'
 #' n = 100 # Sample Size
 #' p = 5
-#' rho = 0.1
+#' rho = 0.9
 #' # Covariance structure with Autoregressive structure
 #' cov_mat <- covMatAR(p = p, rho = rho)
-#' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' indTest(data)
 #' indTest(data, covMat = cov_mat)
 #'
 #' # Covariance structure with Compound Symmetry structure
 #' cov_mat <- covMatCS(p = p, rho = rho)
-#' data <-mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' indTest(data)
 #' indTest(data, covMat = cov_mat)
 #'
 #' #' # Covariance structure with Circular structure
 #' cov_mat <- covMatC(p = p, rho = rho)
-#' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' indTest(data)
 #' indTest(data, covMat = cov_mat)
-#' }
+#'
 #'
 #' @export
 #' @importFrom stats cov var pchisq
 indTest <- function(X, covMat = NULL, alpha = 0.05) {
+
   n <- nrow(X)
   p <- ncol(X)
 
