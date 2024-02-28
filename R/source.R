@@ -1,4 +1,4 @@
-# library(MASS)
+library(MASS)
 # library(stats)
 #
 # n <- 199
