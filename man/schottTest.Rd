@@ -17,6 +17,27 @@ A data frame containing the test statistic, alpha value, p-value, and test resul
 \description{
 Performs Schott's test for the correlation matrix to assess if the correlation matrix is significantly different from an identity matrix.
 }
+\examples{
+
+n = 100 # Sample Size
+p = 5
+rho = 0.1
+cov_mat <- covMatAR(p = p, rho = rho)
+data <- simData(n = n, p = p, Sigma = cov_mat)
+schottTest(data)
+
+# Covariance structure with Compound Symmetry structure
+cov_mat <- covMatCS(p = p, rho = rho)
+data <- simData(n = n, p = p, Sigma = cov_mat)
+schottTest(data)
+
+#' # Covariance structure with Circular structure
+cov_mat <- covMatC(p = p, rho = rho)
+data <- simData(n = n, p = p, Sigma = cov_mat)
+schottTest(data)
+
+
+}
 \references{
 Schott, J. R.  (2005). Testing for complete independence in high dimensions, Biometrika, 92(4), 951–956.
 }
