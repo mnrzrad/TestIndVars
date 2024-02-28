@@ -9,27 +9,28 @@
 #' @references
 #' Schott, J. R.  (2005). Testing for complete independence in high dimensions, Biometrika, 92(4), 951–956.
 #' @examples
-#' library(MASS)
+#'
 #' n = 100 # Sample Size
 #' p = 5
 #' rho = 0.1
 #' cov_mat <- covMatAR(p = p, rho = rho)
-#' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' schottTest(data)
 #'
 #' # Covariance structure with Compound Symmetry structure
 #' cov_mat <- covMatCS(p = p, rho = rho)
-#' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' schottTest(data)
 #'
 #' #' # Covariance structure with Circular structure
 #' cov_mat <- covMatC(p = p, rho = rho)
-#' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' data <- simData(n = n, p = p, Sigma = cov_mat)
 #' schottTest(data)
-#' }
+#'
 #'
 #' @export
 #' @importFrom stats cor pnorm
+#' @importFrom MASS mvrnorm
 schottTest <- function(X, alpha = 0.05) {
   n <- nrow(X)
   p <- ncol(X)
