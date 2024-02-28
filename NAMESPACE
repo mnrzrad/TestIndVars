@@ -16,4 +16,3 @@ importFrom(stats,pnorm)
 importFrom(stats,qchisq)
 importFrom(stats,runif)
 importFrom(stats,var)
-
