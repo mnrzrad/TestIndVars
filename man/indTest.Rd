@@ -24,24 +24,26 @@ Performs an independent test for the covariance matrix to assess if it is signif
 \examples{
 # Example usage:
 
+library(MASS)
+
 n = 100 # Sample Size
 p = 5
 rho = 0.9
 # Covariance structure with Autoregressive structure
 cov_mat <- covMatAR(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 indTest(data)
 indTest(data, covMat = cov_mat)
 
 # Covariance structure with Compound Symmetry structure
 cov_mat <- covMatCS(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 indTest(data)
 indTest(data, covMat = cov_mat)
 
 #' # Covariance structure with Circular structure
 cov_mat <- covMatC(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 indTest(data)
 indTest(data, covMat = cov_mat)
 

@@ -19,23 +19,24 @@ Performs a likelihood ratio test for the covariance matrix.
 }
 \examples{
 # Example usage:
+library(MASS)
 
 n = 100 # Sample Size
 p = 5
 rho = 0.1
 # Covariance structure with Autoregressive structure
 cov_mat <- covMatAR(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 lrTest(data, alpha = 0.01)
 
 # Covariance structure with Compound Symmetry structure
 cov_mat <- covMatCS(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 lrTest(data)
 
 # Covariance structure with Circular structure
 cov_mat <- covMatC(p = p, rho = rho)
-data <- simData(n = n, p = p, Sigma = cov_mat)
+data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
 lrTest(data)
 
 }
