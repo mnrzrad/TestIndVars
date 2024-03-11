@@ -28,7 +28,7 @@ library(MASS)
 
 n = 100 # Sample Size
 p = 5
-rho = 0.9
+rho = 0.014
 # Covariance structure with Autoregressive structure
 cov_mat <- covMatAR(p = p, rho = rho)
 data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
