@@ -13,12 +13,20 @@
 #'
 #' library(MASS)
 #'
-#' n = 10 # Sample Size
-#' p = 20  # number of variables
+#' n = 50 # Sample Size
+#' p = 5  # number of variables
 #' rho = 0.4
 #' # Covariance structure with Autoregressive structure
 #' cov_mat <- covMatAR(p = p, rho = rho)
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' indTest(data)
+#' indTest(data, covMat = cov_mat)
+#'
+#' # data with missing vales
+#' missing_rate <- 0.1  # 10% missing values
+#' missing_index_row <- sample(1:n, size = round(n * missing_rate))
+#' missing_index_col <- sample(1:p, size = 1)
+#' data[missing_index_row, missing_index_col] <- NA  # Introduce missing values
 #' indTest(data)
 #' indTest(data, covMat = cov_mat)
 #'
@@ -38,6 +46,17 @@
 #' @export
 #' @importFrom stats cov var pchisq
 indTest <- function(X, covMat = NULL, alpha = 0.05) {
+
+  if (any(is.na(X))) {
+    cat("Alert:")
+    cat('\n')
+    cat("The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
+    cat("\n")
+
+    # [We should discuss the following]
+    # cov(X, use = 'complete.ons')
+    X <- data.frame(na.omit(X))
+  }
 
   n <- nrow(X)
   p <- ncol(X)
