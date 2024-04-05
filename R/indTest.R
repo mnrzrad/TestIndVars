@@ -13,9 +13,9 @@
 #'
 #' library(MASS)
 #'
-#' n = 100 # Sample Size
-#' p = 5
-#' rho = 0.014
+#' n = 10 # Sample Size
+#' p = 20  # number of variables
+#' rho = 0.4
 #' # Covariance structure with Autoregressive structure
 #' cov_mat <- covMatAR(p = p, rho = rho)
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
@@ -53,7 +53,7 @@ indTest <- function(X, covMat = NULL, alpha = 0.05) {
   if (any(off_diag > 0) && any(off_diag < 0)) {
     cat("Alert:")
     cat('\n')
-    cat("The off-diagonal elements of the covariance matrix are not the same signs. The results are not reilable.")
+    cat("The off-diagonal elements of the covariance matrix are not the same signs. The results may not be reliable.")
     cat("\n")
   }
 
