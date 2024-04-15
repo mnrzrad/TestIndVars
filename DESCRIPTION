@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: c(
     person("Filipe J.", "Marques", email = "fjm@fct.unl.pt", role = "aut", comment = c(ORCID = "0000-0001-6453-6558")),
     person("Mina", "Norouzirad", email = "mina.norouzirad@gmail.com", role = c("aut", "cre"),comment = c(ORCID = "0000-0003-0311-6888")),
-    person("Joana", "Diogo", email = "mina.norouzirad@gmail.com", role = "ctb"),
+    person("Joana", "Diogo", role = "ctb"),
     person('Regina", "Bispo", email = "r.bispo@fct.unl.pt", rol = "ctb", comment = c(ORCID = "0000-0002-6723-2557")),
     person("FCT, I.P.", role = "fnd", comment = c("under the scope of the projects UIDB/00297/2020 and UIDP/00297/2020 (NovaMath)"))
     )
