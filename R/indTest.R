@@ -1,11 +1,11 @@
-#' Independent Test for Covariance Matrix
+#' Complete Independent Test
 #'
-#' Performs an independent test for the covariance matrix to assess if it is significantly different from a given covariance matrix or the sample covariance matrix.
+#' Performs an independent test for a set of variables both for low and high dimensional data.
 #'
-#' @param X A numeric matrix or data frame containing the variables.
-#' @param covMat Optional. A numeric matrix representing the covariance matrix to be tested against. If NULL, the sample covariance matrix is used (default is NULL).
+#' @param X A numeric matrix or data frame containing the measurements on the variables.
+#' @param covMat Optional. A numeric matrix representing the population covariance matrix used in the test. If NULL, the sample covariance matrix is used (default is NULL).
 #' @param alpha The significance level for the test (default is 0.05).
-#' @return A data frame containing the test statistic, degrees of freedom, alpha value, p-value, and test result.
+#' @return A data frame containing the observed value of the test statistic, degrees of freedom, alpha value, p-value, and test result.
 #' #' @references
 #' Marques, F. J., Diogo, J., Norouzirad, M., & Bispo, R. (2023). Testing the independence of variables for specific covariance structures: A simulation study. Mathematical Methods in the Applied Sciences, 46(9), 10421–10434. DOI: 10.1002/mma.9130
 #' @examples
@@ -16,18 +16,24 @@
 #' n = 50 # Sample Size
 #' p = 5  # number of variables
 #' rho = 0.4
-#' # Covariance structure with Autoregressive structure
+#' # Building a Covariance structure with Autoregressive structure
 #' cov_mat <- covMatAR(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test assuming that the population covariance matrix is unknown
 #' indTest(data)
+#' # Performing the test assuming that the population covariance matrix is known
 #' indTest(data, covMat = cov_mat)
 #'
-#' # data with missing vales
-#' missing_rate <- 0.1  # 10% missing values
+#' # Example for data with missing values
+#' # Generating data with 10% of missing values
+#' missing_rate <- 0.1
 #' missing_index_row <- sample(1:n, size = round(n * missing_rate))
 #' missing_index_col <- sample(1:p, size = 1)
-#' data[missing_index_row, missing_index_col] <- NA  # Introduce missing values
+#' data[missing_index_row, missing_index_col] <- NA # Introducing missing values
+#' # Performing the test assuming that the population covariance matrix is unknown
 #' indTest(data)
+#' # Performing the test assuming that the population covariance matrix is known
 #' indTest(data, covMat = cov_mat)
 #'
 #' # Covariance structure with Compound Symmetry structure
@@ -53,9 +59,7 @@ indTest <- function(X, covMat = NULL, alpha = 0.05) {
     cat("The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
     cat("\n")
 
-    # [We should discuss the following]
-    # cov(X, use = 'complete.ons')
-    X <- data.frame(na.omit(X))
+     X <- data.frame(na.omit(X))
   }
 
   n <- nrow(X)
