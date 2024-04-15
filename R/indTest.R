@@ -36,21 +36,27 @@
 #' # Performing the test assuming that the population covariance matrix is known
 #' indTest(data, covMat = cov_mat)
 #'
-#' # Covariance structure with Compound Symmetry structure
+#' # Building a Covariance structure with Compound Symmetry structure
 #' cov_mat <- covMatCS(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test assuming that the population covariance matrix is unknown
 #' indTest(data)
+#' # Performing the test assuming that the population covariance matrix is known
 #' indTest(data, covMat = cov_mat)
 #'
-#' #' # Covariance structure with Circular structure
+#' # Building a Covariance structure with Circular structure
 #' cov_mat <- covMatC(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test assuming that the population covariance matrix is unknown
 #' indTest(data)
+#' # Performing the test assuming that the population covariance matrix is known
 #' indTest(data, covMat = cov_mat)
 #'
 #'
 #' @export
-#' @importFrom stats cov var pchisq
+#' @importFrom stats cov var pchisq na.omit
 indTest <- function(X, covMat = NULL, alpha = 0.05) {
 
   if (any(is.na(X))) {

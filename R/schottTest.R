@@ -11,28 +11,44 @@
 #' @examples
 #' library(MASS)
 #'
-#' n = 100 # Sample Size
+#' n = 50 # Sample Size
 #' p = 5
 #' rho = 0.1
+#' # Building a Covariance structure with Autoregressive structure
 #' cov_mat <- covMatAR(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test
 #' schottTest(data)
 #'
-#' # Covariance structure with Compound Symmetry structure
+#' # Building a Covariance structure with Compound Symmetry structure
 #' cov_mat <- covMatCS(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test
 #' schottTest(data)
 #'
-#' #' # Covariance structure with Circular structure
+#' # Building a Covariance structure with Circular structure
 #' cov_mat <- covMatC(p = p, rho = rho)
+#' # Simulated data
 #' data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+#' # Performing the test
 #' schottTest(data)
 #'
 #'
 #' @export
-#' @importFrom stats cor pnorm
+#' @importFrom stats cor pnorm na.omit
 #' @importFrom MASS mvrnorm
 schottTest <- function(X, alpha = 0.05) {
+  if (any(is.na(X))) {
+    cat("Alert:")
+    cat('\n')
+    cat("The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
+    cat("\n")
+
+    X <- data.frame(na.omit(X))
+  }
+
   n <- nrow(X)
   p <- ncol(X)
 

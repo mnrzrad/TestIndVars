@@ -18,25 +18,32 @@ A data frame containing the test statistic, degrees of freedom, critical value, 
 Performs a likelihood ratio test for the covariance matrix.
 }
 \examples{
-# Example usage:
+
 library(MASS)
 
-n = 100 # Sample Size
+n = 50 # Sample Size
 p = 5
 rho = 0.1
-# Covariance structure with Autoregressive structure
+
+# Building a Covariance structure with Autoregressive structure
 cov_mat <- covMatAR(p = p, rho = rho)
+# Simulated data
 data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+# Performing the test
 lrTest(data, alpha = 0.01)
 
-# Covariance structure with Compound Symmetry structure
+# Building a Covariance structure with Compound Symmetry structure
 cov_mat <- covMatCS(p = p, rho = rho)
+# Simulated data
 data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+# Performing the test
 lrTest(data)
 
-# Covariance structure with Circular structure
+# Building a Covariance structure with Circular structure
 cov_mat <- covMatC(p = p, rho = rho)
+# Simulated data
 data <- mvrnorm(n = n, mu = rep(0,p), Sigma = cov_mat)
+# Performing the test
 lrTest(data)
 
 }
