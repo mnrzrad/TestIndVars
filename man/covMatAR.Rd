@@ -22,12 +22,8 @@ The Autoregressive structure is defined as follows:
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 \rho^{\lvert p-1 \rvert}  & \rho^{\lvert p-2 \rvert}  & \rho^{\lvert p-3 \rvert} \cdots & 1
 \end{bmatrix}}
-where
-\itemize{
-  \item{\eqn{\Sigma }}{ is the covariance matrix.}
-  \item{\eqn{\sigma^2 }}{ is the variance parameter.}
-  \item{\eqn{\rho }}{ is the correlation parameter.}
-  }}
+where \eqn{\Sigma } is the covariance matrix, \eqn{\sigma^2} is the variance parameter,
+and \eqn{\rho } is the correlation parameter.}
 }
 \value{
 A \eqn{p \times p} numeric matrix representing the Autoregressive (AR) covariance structure.

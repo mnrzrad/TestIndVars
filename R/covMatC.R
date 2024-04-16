@@ -21,15 +21,11 @@
 #' \vdots & \vdots & \vdots & \ddots & \vdots \\
 #' b_1  & b_2  & b_3 \cdots & \sigma^2
 #' \end{bmatrix}}
-#' where
-#' \itemize{
-#'   \item{\eqn{\Sigma}}{ is the covariance matrix.}
-#'   \item{\eqn{\sigma^2 }}{ is the variance parameter.}
-#'   \item{\eqn{b_j}}{ is the sequence that \eqn{b_j = b_{p-j}} for
+#' where \eqn{\Sigma } is the covariance matrix, \eqn{\sigma^2} is the variance parameter,
+#' and \eqn{b_j} is the sequence that \eqn{b_j = b_{p-j}} for
 #'    \eqn{j = 1, 2, \ldots, \lfloor p/2 \rfloor} where
 #' \eqn{\lfloor \cdot \rfloor} represents the largest integer that is not
-#' greater than the argument.}
-#'   }
+#' greater than the argument.
 #'
 #' @return A \eqn{p \times p} numeric matrix representing the Circular (C) covariance structure.
 #'

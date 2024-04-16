@@ -23,12 +23,8 @@ The compound symmetry structure is defined as follows:
 \vdots & \vdots & \ddots & \vdots \\
 \rho & \rho & \cdots & \rho
 \end{bmatrix}}
-where
-\itemize{
-  \item{\eqn{\Sigma }}{ is the covariance matrix.}
-  \item{\eqn{\sigma^2 }}{ is the variance parameter.}
-  \item{\eqn{\rho }}{ is the correlation parameter.}
-  }}
+where \eqn{\Sigma } is the covariance matrix, \eqn{\sigma^2} is the variance parameter,
+and \eqn{\rho } is the correlation parameter.}
 }
 \value{
 A \eqn{p \times p} numeric matrix representing the covariance matrix with
