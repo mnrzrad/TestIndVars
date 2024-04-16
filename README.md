@@ -35,13 +35,13 @@ remotes::install_github("mnrzrad/TestIndVars")
 ## To cite package `TestIndVars` in publications use:
 
 Marques, F. J., Norouzirad, M., Diogo, J., Bispo, R. (2023) *TestIndVars:
-Testing the Independence of Variables for Specific Covariance Structures*. R package version 1.0.0,
+Testing the Independence of Variables for Specific Covariance Structures*. R package version 0.1.0,
 <https://cran.r-project.org/package=TestIndVars>.
 
 A BibTeX entry for LaTeX users is
 
 @Manual{TestIndVars, title = {TestIndVars: Neutrosophic distributions},
-author = {Filipe J. Marques and Mina Norouzirad and Joana Diogo and Regina Bispo}, year = {2023}, note = {R package version 1.0.0}, url =
+author = {Filipe J. Marques and Mina Norouzirad and Joana Diogo and Regina Bispo}, year = {2023}, note = {R package version 0.1.0}, url =
 {<https://cran.r-project.org/package=TestIndVars>} }
 
 ## License
