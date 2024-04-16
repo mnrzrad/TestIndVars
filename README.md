@@ -8,7 +8,7 @@ month](https://cranlogs.r-pkg.org/badges/TestIndVars)](https://cran.r-project.or
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/TestIndVars)](https://cran.r-project.org/package=TestIndVars)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-The R package *TestIndVars* test the nullity of covariances, in a set of variables, using a simple univariate procedure. See Marques et al. (2023) <doi:10.1002/mma.9130>.
+The R package *TestIndVars* test the nullity of covariances, in a set of variables, using a simple univariate procedure. See [Marques et al. (2023)](https://onlinelibrary.wiley.com/doi/full/10.1002/mma.9130).
 
 This work is funded by national funds through the FCT - Fundação para a
 Ciência e a Tecnologia, I.P., under the scope of the projects
