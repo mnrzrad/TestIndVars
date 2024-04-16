@@ -1,4 +1,4 @@
-# TestIndVars <img src="man/figures/logo.png" align="right" width="30%"/>
+# TestIndVars <img src="man/figures/logo.png" align="right" width="25%"/>
 
 [![R-CMD-check](https://github.com/mnrzrad/TestIndVars/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mnrzrad/TestIndVars/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/TestIndVars)](https://cran.r-project.org/package=TestIndVars)
