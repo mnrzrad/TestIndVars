@@ -1,6 +1,6 @@
 #' Likelihood Ratio Test for Covariance Matrix
 #'
-#' Performs a likelihood ratio test for the covariance matrix.
+#' Performs a likelihood ratio test for the covariance matrix to assess if the covariance matrix is significantly different from an identity matrix.
 #'
 #' @param X A numeric matrix or data frame containing the variables.
 #' @param alpha The significance level for the test. (default is 0.05).

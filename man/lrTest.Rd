@@ -15,7 +15,7 @@ lrTest(X, alpha = 0.05)
 A data frame containing the test statistic, degrees of freedom, critical value, p-value, and test result.
 }
 \description{
-Performs a likelihood ratio test for the covariance matrix.
+Performs a likelihood ratio test for the covariance matrix to assess if the covariance matrix is significantly different from an identity matrix.
 }
 \examples{
 
