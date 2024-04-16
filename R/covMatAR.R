@@ -60,7 +60,7 @@ covMatAR <- function(p, sigma2 = 1, rho) {
     message <- "The covariance matrix is not positive definite."
   }
 
-  cat(message, "\n")
-  cat("\n")
+  message(message)
+
   return(matrix)
 }

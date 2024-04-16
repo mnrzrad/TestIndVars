@@ -40,10 +40,8 @@
 lrTest <- function(X, alpha = 0.05) {
 
   if (any(is.na(X))) {
-    cat("Alert:")
-    cat('\n')
-    cat("The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
-    cat("\n")
+
+    message("Alert: The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
 
     X <- data.frame(na.omit(X))
   }

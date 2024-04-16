@@ -69,12 +69,7 @@ covMatC <- function(p, sigma2 = 1, rho = NULL) {
     message <- "The covariance matrix is not positive definite."
   }
 
+  message(message)
 
-
-  cat(message, "\n")
-  cat("\n")
   return(matrix)
 }
-
-mat = covMatC(5)
-mat

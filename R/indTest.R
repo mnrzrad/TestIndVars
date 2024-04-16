@@ -60,12 +60,10 @@
 indTest <- function(X, covMat = NULL, alpha = 0.05) {
 
   if (any(is.na(X))) {
-    cat("Alert:")
-    cat('\n')
-    cat("The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
-    cat("\n")
 
-     X <- data.frame(na.omit(X))
+    message("Alert: The data has missing values. The missing values are handled by casewise deletion (and if there are no complete cases, that gives an error)")
+
+    X <- data.frame(na.omit(X))
   }
 
   n <- nrow(X)
@@ -80,10 +78,7 @@ indTest <- function(X, covMat = NULL, alpha = 0.05) {
 
   off_diag <- covMat[!row(covMat) == col(covMat)]
   if (any(off_diag > 0) && any(off_diag < 0)) {
-    cat("Alert:")
-    cat('\n')
-    cat("The off-diagonal elements of the covariance matrix are not the same signs. The results may not be reliable.")
-    cat("\n")
+    message("Alert: The off-diagonal elements of the covariance matrix are not the same signs. The results may not be reliable.")
   }
 
   # Check if the covariance matrix is symmetric
