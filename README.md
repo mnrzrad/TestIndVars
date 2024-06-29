@@ -40,7 +40,7 @@ Testing the Independence of Variables for Specific Covariance Structures*. R pac
 
 A BibTeX entry for LaTeX users is
 
-@Manual{TestIndVars, title = {TestIndVars: Neutrosophic distributions},
+@Manual{TestIndVars, title = {TestIndVars: Testing the Independence of Variables for Specific Covariance Structures},
 author = {Filipe J. Marques and Mina Norouzirad and Joana Diogo and Regina Bispo}, year = {2024}, note = {R package version 0.1.0}, url =
 {<https://cran.r-project.org/package=TestIndVars>} }
 
